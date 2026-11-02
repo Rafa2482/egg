@@ -1,0 +1,23 @@
+{
+  "id": "./",
+  "name": "Carteira de Demonstração",
+  "short_name": "Carteira Demo",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eeeeee",
+  "theme_color": "#1f4e6b",
+  "description": "Protótipo visual demonstrativo, sem validade oficial e sem autenticação.",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

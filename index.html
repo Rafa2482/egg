@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Carteira — Demonstração</title>
+
+<style>
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eeeeee;
+    color:#111;
+    min-height:100vh;
+    min-height:100dvh;
+    padding-bottom:calc(16px + env(safe-area-inset-bottom));
+}
+
+.demo-banner{
+    width:100%;
+    padding:8px 12px;
+    text-align:center;
+    background:#fff3cd;
+    color:#664d03;
+    border-bottom:1px solid #e6d59a;
+    font:700 11px/1.3 Arial,sans-serif;
+    letter-spacing:.35px;
+    flex:0 0 auto;
+}
+
+
+
+/* =========================
+   TOPO
+========================= */
+
+.topo{
+    min-height: 76px;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+
+    padding: calc(14px + env(safe-area-inset-top)) 20px 14px;
+
+    font-size: 21px;
+    font-weight: 400;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.container{
+    width: 100%;
+    padding: 0 20px;
+}
+
+
+/* =========================
+   LOGO POLÍCIA CIVIL
+========================= */
+
+.foto{
+    width: 105px;
+    height: 125px;
+
+    margin: clamp(24px, 7vh, 56px) auto clamp(24px, 6vh, 48px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1{
+    margin: 0 0 20px 0;
+
+    font-size: 30px;
+    line-height: 1.15;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   SUBTÍTULO
+========================= */
+
+.sub{
+    margin-bottom: 19px;
+
+    font-size: 21px;
+    line-height: 1.3;
+
+    color: #181818;
+}
+
+
+/* =========================
+   CAMPO DE SENHA
+========================= */
+
+.input-box{
+    position: relative;
+
+    width: 100%;
+    min-height: 58px;
+}
+
+input{
+    width: 100%;
+    height: 100%;
+
+    padding: 0 60px 0 25px;
+
+    background: #ffffff;
+
+    border: 1.5px solid #c9c9c9;
+    border-radius: 6px;
+
+    outline: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 20px;
+
+    color: #333333;
+}
+
+input::placeholder{
+    color: #5d5d5d;
+    opacity: 1;
+}
+
+input:focus{
+    border-color: #777777;
+}
+
+
+/* =========================
+   OLHO
+========================= */
+
+.olho{
+    position: absolute;
+
+    right: 21px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.olho svg{
+    width: 30px;
+    height: 30px;
+
+    stroke: #555555;
+
+    fill: none;
+
+    stroke-width: 2.2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================
+   ESQUECI MINHA SENHA
+========================= */
+
+.esqueci{
+    text-align: right;
+
+    color: #075078;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    margin-top: 19px;
+    margin-bottom: 40px;
+
+    padding-right: 18px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BOTÃO ENTRAR
+========================= */
+
+.botao{
+    width: 100%;
+    min-height: 58px;
+
+    padding: 0;
+
+    background: #adadad;
+
+    border: none;
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    transition: background 0.2s;
+
+    cursor: pointer;
+}
+
+
+/* QUANDO DIGITAR A SENHA */
+
+.botao.ativo{
+    background:#0b5278;
+    cursor:pointer;
+}
+
+
+/* =========================
+   LINKS INFERIORES
+========================= */
+
+.footer{
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 38px;
+
+    padding: 0 18px;
+
+    color: #075078;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.footer div{
+    cursor: pointer;
+}
+
+
+/* =========================
+   AJUSTES PARA CELULARES
+   MENORES
+========================= */
+
+@media(max-width: 380px){
+
+    .topo{
+        height: 84px;
+
+        padding-left: 18px;
+
+        font-size: 20px;
+    }
+
+    .container{
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .foto{
+        width: 92px;
+        height: 110px;
+
+        margin-top: 53px;
+        margin-bottom: 48px;
+    }
+
+    h1{
+        font-size: 27px;
+        margin-bottom: 17px;
+    }
+
+    .sub{
+        font-size: 19px;
+    }
+
+    .input-box{
+        height: 58px;
+    }
+
+    input{
+        font-size: 18px;
+        padding-left: 21px;
+    }
+
+    .esqueci{
+        font-size: 17px;
+        margin-bottom: 35px;
+    }
+
+    .botao{
+        height: 59px;
+        font-size: 19px;
+    }
+
+    .footer{
+        font-size: 16px;
+        padding: 0 10px;
+    }
+}
+
+</style>
+
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"));}</script>
+</head>
+
+<link rel="manifest" href="./manifest.webmanifest">
+
+<meta name="theme-color" content="#1f4e6b">
+
+<link rel="apple-touch-icon" href="./icon-192.png">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Demo">
+
+<body>
+
+
+<!-- TOPO -->
+
+<header class="topo">
+    Demonstração
+</header>
+<div class="demo-banner">AMBIENTE DE DEMONSTRAÇÃO — SEM VALIDADE OFICIAL</div>
+
+
+<!-- CONTEÚDO -->
+
+<main class="container">
+
+
+    <!-- LOGO -->
+
+    <div class="foto">
+
+        <img
+            src="sua-foto.jpg"
+            alt="Imagem ilustrativa da demonstração"
+        >
+
+    </div>
+
+
+
+    <!-- TÍTULO -->
+
+    <h1>
+        Carteira de demonstração
+    </h1>
+
+    <div class="sub">
+        Esta versão é apenas ilustrativa e não representa um serviço oficial.
+    </div>
+
+    <!-- Acesso sem coleta de credenciais -->
+
+    <button class="botao ativo" id="btnEntrar" onclick="entrar()">
+        Abrir demonstração
+    </button>
+
+    <!-- LINKS -->
+
+    <div class="footer">
+
+        <div>
+            Ajuda
+        </div>
+
+        <div>
+            Privacidade
+        </div>
+
+        <div>
+            Termos
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+function entrar(){
+    window.location.href = "documento.html";
+}
+</script>
+
+</body>
+</html>
